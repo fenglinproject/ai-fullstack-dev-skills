@@ -2257,5 +2257,16 @@
       "审计规范",
       "脱敏规则"
     ]
+  },
+  {
+    "category": "13_documentation",
+    "name": "docs 文档生成",
+    "description": "强制每个开发阶段生成 Markdown 文档并放入 docs/ 目录",
+    "skills": [
+      "skills/13_documentation/00_docs_orchestrator/SKILL.md",
+      "skills/13_documentation/01_stage_doc_generator/SKILL.md",
+      "skills/13_documentation/02_docs_index_generator/SKILL.md",
+      "skills/13_documentation/03_doc_review_gate/SKILL.md"
+    ]
   }
 ]

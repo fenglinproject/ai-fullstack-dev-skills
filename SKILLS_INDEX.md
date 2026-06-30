@@ -129,3 +129,15 @@
 | 12_code_quality | 依赖升级检查 | 检查依赖版本、漏洞、兼容性、升级步骤 | `skills/12_code_quality/03_dependency_upgrade/SKILL.md` |
 | 12_code_quality | 性能优化 | 分析页面慢、接口慢、SQL 慢、缓存低效等问题 | `skills/12_code_quality/04_performance_optimization/SKILL.md` |
 | 12_code_quality | 可观测性与日志规范 | 规范 requestId、用户、接口、耗时、错误、审计日志 | `skills/12_code_quality/05_observability_logs/SKILL.md` |
+---
+
+## 13_documentation：docs 文档生成
+
+用于强制 AI 在每个开发阶段生成 Markdown 文档，并统一放到 `docs/` 目录。
+
+| Skill | 路径 | 用途 |
+|---|---|---|
+| docs 文档总控生成器 | `skills/13_documentation/00_docs_orchestrator/SKILL.md` | 判断阶段并生成对应 docs 文档 |
+| 阶段文档生成器 | `skills/13_documentation/01_stage_doc_generator/SKILL.md` | 把阶段结果整理成 Markdown |
+| docs/README.md 文档索引生成器 | `skills/13_documentation/02_docs_index_generator/SKILL.md` | 维护项目文档索引 |
+| 文档质量检查门禁 | `skills/13_documentation/03_doc_review_gate/SKILL.md` | 检查文档是否能指导开发 |
