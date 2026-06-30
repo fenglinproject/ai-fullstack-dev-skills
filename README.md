@@ -93,26 +93,17 @@ AI 会根据 Skills 临时扮演：
 ## 项目目录
 
 ```text
-AI单人全栈开发Skills超细分版/
-├── 00_MASTER_PROMPT.md
+AI单人全栈开发Skills/
 ├── README.md
+├── LICENSE
+├── 00_MASTER_PROMPT.md
 ├── SKILLS_INDEX.md
 ├── skills_index.json
+├── skills/
+├── docs/
 ├── templates/
-└── skills/
-    ├── 00_core/
-    ├── 01_requirements/
-    ├── 02_product_design/
-    ├── 03_architecture/
-    ├── 04_database/
-    ├── 05_backend/
-    ├── 06_frontend/
-    ├── 07_integration_debugging/
-    ├── 08_testing/
-    ├── 09_security/
-    ├── 10_deployment_ops/
-    ├── 11_iteration/
-    └── 12_code_quality/
+└── sql/
+    └── database.sql
 ```
 
 ---
