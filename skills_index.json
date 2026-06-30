@@ -4,7 +4,8 @@
   "rules": {
     "docs_output": "所有阶段文档生成到 docs/",
     "single_sql": "数据库阶段只生成 sql/database.sql",
-    "project_startup_docs": "具体业务项目必须生成 START_HERE.md、README.md、.env.example 和 docs/00_getting_started/"
+    "project_startup_docs": "具体业务项目必须生成 START_HERE.md、README.md、.env.example 和 docs/00_getting_started/",
+    "frontend_scaffold": "前端初始化必须生成入口文件和配置文件；uni-app 必须生成 manifest.json、pages.json、App.vue、main.js、index.html；H5/Vite 必须生成 index.html。"
   },
   "categories": [
     {

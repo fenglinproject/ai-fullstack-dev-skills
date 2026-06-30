@@ -589,3 +589,135 @@ docs/00_getting_started/09_troubleshooting.md
 4. 不允许省略前端或后端启动说明。
 5. 不允许省略常见问题排查。
 6. 不允许把 Skills 工具包启动文档当成业务项目启动文档。
+---
+
+# 前端项目初始化文件生成强制规则
+
+## 一、核心原则
+
+当前端项目进入初始化、页面开发、代码生成阶段时，不能只生成页面组件代码，必须同时生成项目运行所需的入口文件和配置文件。
+
+如果项目类型是小程序、uni-app、Taro、原生微信小程序、H5、Web、Vue、React、Vite，必须根据技术栈生成对应项目初始化文件。
+
+不允许只生成 `pages/` 页面，不生成入口配置。
+
+---
+
+## 二、小程序技术栈判断
+
+如果用户只说“小程序”，但没有指定框架，你必须先判断或询问：
+
+```text
+你是要用 uni-app、Taro，还是原生微信小程序？
+```
+
+如果用户不想选择，默认推荐：
+
+```text
+uni-app + Vue3 + Vite
+```
+
+---
+
+## 三、uni-app 小程序必须生成
+
+```text
+frontend/
+├── package.json
+├── index.html
+├── manifest.json
+├── pages.json
+├── App.vue
+├── main.js 或 main.ts
+├── uni.scss
+├── vite.config.js 或 vite.config.ts
+└── src/
+    ├── pages/index/index.vue
+    ├── components/
+    ├── utils/
+    ├── api/
+    └── static/
+```
+
+必须说明：
+
+1. `manifest.json` 用于配置小程序 AppID、应用名称、权限、平台设置。
+2. `pages.json` 用于配置页面路由、导航栏、tabBar。
+3. `App.vue` 是应用入口组件。
+4. `main.js/main.ts` 是应用启动入口。
+5. `index.html` 用于 H5 / Vite 入口；如果只编译微信小程序，也建议保留，方便 H5 调试。
+6. `package.json` 用于依赖和启动脚本。
+
+---
+
+## 四、原生微信小程序必须生成
+
+如果项目是原生微信小程序，不要生成 `index.html`，而是必须生成：
+
+```text
+miniprogram/
+├── app.js
+├── app.json
+├── app.wxss
+├── project.config.json
+├── sitemap.json
+└── pages/index/
+    ├── index.wxml
+    ├── index.wxss
+    ├── index.js
+    └── index.json
+```
+
+注意：原生微信小程序没有 `index.html`，也没有 `manifest.json`。
+
+---
+
+## 五、H5 / Vue / React / Vite 项目必须生成
+
+```text
+frontend/
+├── package.json
+├── index.html
+├── vite.config.js 或 vite.config.ts
+└── src/
+    ├── main.js 或 main.ts
+    ├── App.vue 或 App.tsx
+    ├── router/
+    ├── api/
+    ├── pages/
+    ├── components/
+    └── styles/
+```
+
+`index.html` 必须包含根节点：
+
+```html
+<div id="app"></div>
+```
+
+---
+
+## 六、前端初始化阶段必须输出
+
+1. 前端技术栈
+2. 前端目录结构
+3. 必须生成的入口文件清单
+4. 每个文件的作用
+5. 每个文件的完整内容
+6. 启动命令
+7. 构建命令
+8. 如何在微信开发者工具中导入，如是小程序
+9. 验收标准
+10. 同步更新 `docs/00_getting_started/05_run_frontend.md`
+
+---
+
+## 七、禁止事项
+
+1. 不允许只生成页面 `.vue`，不生成 `manifest.json`。
+2. 不允许只生成组件，不生成 `pages.json`。
+3. H5 / Vite 项目不允许缺少 `index.html`。
+4. 原生微信小程序不允许错误生成 `index.html`。
+5. 小程序项目必须说明使用 uni-app、Taro 还是原生微信小程序。
+6. 不允许省略 `package.json`。
+7. 不允许省略启动命令。

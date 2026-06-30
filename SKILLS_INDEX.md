@@ -94,3 +94,25 @@ docs/00_getting_started/
 | 具体业务项目启动文档生成器 | `skills/14_project_startup_docs/00_project_startup_docs_generator/SKILL.md` | 生成业务项目启动说明 |
 | .env.example 生成器 | `skills/14_project_startup_docs/01_env_example_generator/SKILL.md` | 生成环境变量示例 |
 | getting_started 文档生成器 | `skills/14_project_startup_docs/02_getting_started_docs_generator/SKILL.md` | 生成本地启动、数据库、前后端、部署、排错文档 |
+
+
+---
+
+## 前端项目初始化文件生成
+
+| Skill | 路径 | 用途 |
+|---|---|---|
+| 前端项目初始化文件生成器 | `skills/06_frontend/00_frontend_project_scaffold/SKILL.md` | 生成前端项目结构、入口文件、配置文件 |
+| 小程序配置文件生成器 | `skills/06_frontend/01_miniprogram_config_generator/SKILL.md` | 生成 `manifest.json`、`pages.json`、`project.config.json` 等小程序配置 |
+
+### uni-app 必须生成
+
+```text
+frontend/package.json
+frontend/index.html
+frontend/manifest.json
+frontend/pages.json
+frontend/App.vue
+frontend/main.js 或 main.ts
+frontend/vite.config.js 或 vite.config.ts
+```
