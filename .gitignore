@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+# JavaScript
+node_modules/
+dist/
+build/
+.next/
+coverage/
+# Editors, OS
+.DS_Store
+.idea/
+.vscode/
+# Local credentials, secrets, databases, logs
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.sqlite
+*.sqlite3
+*.db
+*.log
+# Local evidence and transient project runs
+**/.ai/reports/
+**/.ai/last_checks.json
+*.tmp
+**/.ai/task_state.lock
+# V3 local backup manifests (may contain recovered source code)
+**/.ai/changes/
+# V3.1 private model-generated proposals (may contain proprietary source code)
+**/.ai/proposals/
+
+# V3.2 private multi-round journals
+**/.ai/loops/
+
+# V3.7 local symbol cache (private paths and symbol names)
+**/.ai/cache/
+
+# V4 toolkit verification artifacts (not part of source)
+benchmarks/reports/

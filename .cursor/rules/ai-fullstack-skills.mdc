@@ -1,0 +1,10 @@
+---
+description: AI Fullstack Skills V2 shared policy and routing
+alwaysApply: true
+---
+
+Read `AGENTS.md`, `policies/COMMON.md` and project state as needed.
+
+For the current task run `python orchestrator/cli.py route --task "<task>"`, then load only selected SKILL.md files. Project code belongs in `project/`; keep tests and docs with the project. Run project checks only when authorized, and distinguish actual results from suggested checks. Explicit confirmation is mandatory before changing production services or destructive database state.
+
+V3: use `orchestrator/workflow.py handoff` and produce `docs/agent_proposal.schema.json` proposals. `preview` is read-only; `apply --approve` is explicit. Strict-risk changes also need `--high-risk-reviewed`. The framework does not run an LLM, Git commit, or production deploy.

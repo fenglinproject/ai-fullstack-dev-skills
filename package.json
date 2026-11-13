@@ -1,0 +1,12 @@
+{
+  "name": "ai-fullstack-dev-skills-toolchain",
+  "private": true,
+  "version": "5.0.0",
+  "description": "CI-only tools; no application runtime dependencies",
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  }
+}

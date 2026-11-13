@@ -1,0 +1,9 @@
+{
+  "id":"react-node-postgres", "name":"React + TypeScript + Node.js + PostgreSQL", "status":"recipe_only_unverified",
+  "runtime":"Node.js LTS", "database":"PostgreSQL 16+", "frontend":"React + TypeScript + Vite",
+  "backend":"Node.js + TypeScript (Express or Fastify)",
+  "recommended_for":["interactive dashboard","admin app"],
+  "steps":["create user-facing frontend under project/frontend","implement API under project/backend","define schema in project/sql","write tests under project/tests"],
+  "minimum_security":["server-side authorization","schema validation","least privilege","rollback plan for schema changes"],
+  "notes":"Recipe only; not installed or tested."
+}

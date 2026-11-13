@@ -1,0 +1,8 @@
+{
+  "id":"python-sqlite", "name":"Python stdlib + SQLite", "status":"tested_with_runnable_example",
+  "runtime":"Python 3.10+", "database":"SQLite", "frontend":"HTML/CSS/vanilla JS",
+  "recommended_for":["offline proof of concept","training","small local demo"],
+  "example_path":"examples/runnable-todo",
+  "verification":{"cwd":"examples/runnable-todo","args":["python","-m","unittest","discover","-s","tests","-v"]},
+  "limitations":["not production authentication","no external dependencies"]
+}

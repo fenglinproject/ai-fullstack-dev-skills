@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "fixture_sha256": "a11d80c83fe29ee3f72b25046c46bb41aa81ecc9f9a4aa89927036ec4b6c222d",
+  "top_k": 3,
+  "retrieval": {
+    "cases": 10,
+    "recall_hits": 10,
+    "recall_at_k": 1.0,
+    "top1_hits": 10,
+    "top1_accuracy": 1.0,
+    "mrr_at_k": 1.0,
+    "per_project": {
+      "examples/runnable-todo": {
+        "cases": 7,
+        "hits": 7
+      },
+      "examples/workflow-demo": {
+        "cases": 3,
+        "hits": 3
+      }
+    },
+    "cases_detail": [
+      {
+        "id": "format-symbol",
+        "project": "examples/workflow-demo",
+        "expected_file": "src/formatter.py",
+        "top_paths": [
+          "src/formatter.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "format-test",
+        "project": "examples/workflow-demo",
+        "expected_file": "tests/test_formatter.py",
+        "top_paths": [
+          "tests/test_formatter.py",
+          "src/formatter.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "format-change",
+        "project": "examples/workflow-demo",
+        "expected_file": "src/formatter.py",
+        "top_paths": [
+          "src/formatter.py",
+          "tests/test_formatter.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "api-registration",
+        "project": "examples/runnable-todo",
+        "expected_file": "backend/app.py",
+        "top_paths": [
+          "backend/app.py",
+          "frontend/index.html",
+          "tests/test_api.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "ui-styles",
+        "project": "examples/runnable-todo",
+        "expected_file": "frontend/style.css",
+        "top_paths": [
+          "frontend/style.css",
+          "frontend/index.html",
+          "frontend/app.js"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "http-server",
+        "project": "examples/runnable-todo",
+        "expected_file": "backend/server.py",
+        "top_paths": [
+          "backend/server.py",
+          "backend/app.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "api-tests",
+        "project": "examples/runnable-todo",
+        "expected_file": "tests/test_api.py",
+        "top_paths": [
+          "tests/test_api.py",
+          "backend/app.py",
+          "frontend/index.html"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "todo-database",
+        "project": "examples/runnable-todo",
+        "expected_file": "backend/app.py",
+        "top_paths": [
+          "backend/app.py",
+          "frontend/app.js",
+          "backend/server.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "html-entry",
+        "project": "examples/runnable-todo",
+        "expected_file": "frontend/index.html",
+        "top_paths": [
+          "frontend/index.html",
+          "backend/server.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      },
+      {
+        "id": "client-javascript",
+        "project": "examples/runnable-todo",
+        "expected_file": "frontend/app.js",
+        "top_paths": [
+          "frontend/app.js",
+          "frontend/index.html",
+          "backend/app.py"
+        ],
+        "rank": 1,
+        "recall_at_k": true
+      }
+    ]
+  },
+  "triage": {
+    "cases": 8,
+    "correct": 8,
+    "accuracy": 1.0,
+    "cases_detail": [
+      {
+        "id": "missing-dep",
+        "expected": "dependency_missing",
+        "actual": "dependency_missing",
+        "correct": true
+      },
+      {
+        "id": "invalid-syntax",
+        "expected": "syntax_error",
+        "actual": "syntax_error",
+        "correct": true
+      },
+      {
+        "id": "failed-assert",
+        "expected": "assertion_failure",
+        "actual": "assertion_failure",
+        "correct": true
+      },
+      {
+        "id": "bad-type",
+        "expected": "type_error",
+        "actual": "type_error",
+        "correct": true
+      },
+      {
+        "id": "service-offline",
+        "expected": "connection_failure",
+        "actual": "connection_failure",
+        "correct": true
+      },
+      {
+        "id": "no-permission",
+        "expected": "permission_failure",
+        "actual": "permission_failure",
+        "correct": true
+      },
+      {
+        "id": "timeout",
+        "expected": "timeout",
+        "actual": "timeout",
+        "correct": true
+      },
+      {
+        "id": "unknown",
+        "expected": "unknown",
+        "actual": "unknown",
+        "correct": true
+      }
+    ]
+  },
+  "note": "Small curated offline fixtures; measures candidate retrieval and heuristic triage only, NOT autonomous code repair, model quality, CI reliability or production readiness."
+}

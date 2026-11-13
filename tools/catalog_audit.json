@@ -1,0 +1,13 @@
+{
+  "skills": 144,
+  "stage_count": 16,
+  "risk_counts": {
+    "low": 32,
+    "high": 45,
+    "medium": 67
+  },
+  "primary_count": 30,
+  "issues": [],
+  "warnings": [],
+  "passed": true
+}

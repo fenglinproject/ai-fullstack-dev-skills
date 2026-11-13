@@ -1,0 +1,23 @@
+{
+  "name": "your-app-name",
+  "appid": "__UNI__XXXXXXX",
+  "description": "项目描述",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "请填写微信小程序AppID",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true
+  },
+  "h5": {
+    "title": "项目名称",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "schema_version":1,
+ "symbol_cases":[
+  {"id":"py-order","project":"inventory-service","task":"OrderService","expected_path":"src/orders.py","expected_symbol":"OrderService"},
+  {"id":"py-note","project":"notes-workspace","task":"search_notes","expected_path":"api/handlers.py","expected_symbol":"NotesController.search_notes"},
+  {"id":"ts-checkout","project":"ts-workspace","task":"Checkout","expected_path":"src/price.ts","expected_symbol":"Checkout"},
+  {"id":"ts-invoice","project":"ts-workspace","task":"invoiceTotal","expected_path":"src/invoice.ts","expected_symbol":"invoiceTotal"},
+  {"id":"js-summarize","project":"js-dashboard","task":"summarize","expected_path":"src/report.js","expected_symbol":"summarize"},
+  {"id":"js-total","project":"js-dashboard","task":"total","expected_path":"src/metrics.js","expected_symbol":"total"}
+ ],
+ "test_cases":[
+  {"id":"py-pricing","project":"inventory-service","changed":["src/pricing.py"],"expected_test":"tests/test_orders.py"},
+  {"id":"py-search","project":"notes-workspace","changed":["core/search.py"],"expected_test":"tests/test_notes.py"},
+  {"id":"ts-price","project":"ts-workspace","changed":["src/price.ts"],"expected_test":"tests/invoice.test.ts"},
+  {"id":"js-metrics","project":"js-dashboard","changed":["src/metrics.js"],"expected_test":"tests/report.test.js"},
+  {"id":"unknown","project":"js-dashboard","changed":["missing.ts"],"expected_test":null,"expect_full":true}
+ ]
+}

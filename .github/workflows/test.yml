@@ -1,0 +1,191 @@
+name: Verify AI Fullstack Skills
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+
+# V5.0: SHA-pinned actions, npm ci, fail-closed aggregation across all required jobs and operating systems.
+# JSON artifacts are evidence of this workflow's checks, not third-party signatures.
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: Install version-pinned TypeScript
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Add locked TypeScript binary to PATH
+        run: echo "$GITHUB_WORKSPACE/node_modules/.bin" >> "$GITHUB_PATH"
+      - name: Confirm fixed toolchain policy
+        run: python tools/toolchain_v48.py --component python --component node --component typescript
+      - name: Audit pinned actions and dependencies
+        run: python tools/supply_chain_v50.py audit
+      - name: Source and catalog audit
+        run: |
+          python tools/sync_catalog.py --check
+          python tools/audit_catalog.py
+          python -m compileall -q orchestrator tools tests examples/runnable-todo/backend examples/loop-demo
+      - name: Fixed routing / multi-language tests
+        run: |
+          python tools/benchmark_router.py
+          python tools/benchmark_v35.py --min-recall 0.8 --min-triage 0.8 --output benchmarks/v35_results.json
+          python tools/benchmark_v36.py --min-holdout 0.75 --output benchmarks/v36_results.json
+          python tools/benchmark_v37.py --min-accuracy 0.8 --output benchmarks/v37_results.json
+          python tools/benchmark_v38.py --modules 12 --output benchmarks/v38_results.json
+          node --check dashboard/static/app.js
+          node --test benchmarks/projects/js-dashboard/tests/report.test.js
+          ./node_modules/.bin/tsc --project benchmarks/projects/ts-workspace/tsconfig.json --noEmit
+      - name: Generate Linux smoke evidence
+        run: python tools/ci_release_v48.py run --suite smoke --execute --output benchmarks/reports/ci_v48_linux_smoke.json
+      - name: Upload Linux smoke evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: ci-v48-linux-smoke
+          path: benchmarks/reports/ci_v48_linux_smoke.json
+          if-no-files-found: error
+
+  isolated-python:
+    name: Python ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [core, analysis, platform, collaboration]
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+      - name: Install version-pinned TypeScript
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Add locked TypeScript binary to PATH
+        run: echo "$GITHUB_WORKSPACE/node_modules/.bin" >> "$GITHUB_PATH"
+      - name: Confirm fixed toolchain policy
+        run: python tools/toolchain_v48.py --component python --component node --component typescript
+      - name: Run isolated Python shard and capture evidence
+        run: python tools/ci_release_v48.py run --suite '${{ matrix.shard }}' --execute --output 'benchmarks/reports/ci_v48_linux_${{ matrix.shard }}.json' > /dev/null
+      - name: Upload shard evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: ci-v48-linux-${{ matrix.shard }}
+          path: benchmarks/reports/ci_v48_linux_${{ matrix.shard }}.json
+          if-no-files-found: error
+
+  cross-platform-locks:
+    name: Worktree locks ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux
+          - os: windows-latest
+            platform: windows
+          - os: macos-latest
+            platform: macos
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+      - name: Confirm Python CI policy
+        run: python tools/toolchain_v48.py --component python
+      - name: Test V5.0 offline lifecycle on this OS
+        run: python -m unittest tests.test_v50 -q
+      - name: Execute lock tests and real temporary-process failure injection
+        run: python tools/ci_release_v48.py run --suite locks --execute --output 'benchmarks/reports/ci_v48_${{ matrix.platform }}_locks.json' > /dev/null
+      - name: Upload platform evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: ci-v48-${{ matrix.platform }}-locks
+          path: benchmarks/reports/ci_v48_${{ matrix.platform }}_locks.json
+          if-no-files-found: error
+
+  aggregate:
+    name: Gate all eight independent CI suites
+    needs: [smoke, isolated-python, cross-platform-locks]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+      - name: Fetch same-workflow artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          pattern: ci-v48-*
+          path: benchmarks/reports/collected
+          merge-multiple: true
+      - name: Fail closed on missing, failing, or inconsistent platform evidence
+        run: |
+          python tools/ci_release_v48.py aggregate \
+            --folder benchmarks/reports/collected \
+            --expected-sha '${{ github.sha }}' \
+            --run-id '${{ github.run_id }}' \
+            --attempt '${{ github.run_attempt }}' \
+            --output benchmarks/reports/ci_v48_aggregate.json
+      - name: Upload validated, unsigned consistency report
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: ci-v48-aggregate
+          path: benchmarks/reports/ci_v48_aggregate.json
+          if-no-files-found: error
+
+  package:
+    name: Deterministic release candidate and unsigned provenance
+    needs: aggregate
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+      - name: Build deterministic archive from source
+        run: |
+          mkdir -p dist
+          python tools/package_release_v50.py create --output dist/ai-fullstack-dev-skills-v5.0.zip --execute
+          python tools/package_release_v50.py verify --archive dist/ai-fullstack-dev-skills-v5.0.zip
+          python tools/supply_chain_v50.py provenance --archive dist/ai-fullstack-dev-skills-v5.0.zip --output dist/ai-fullstack-dev-skills-v5.0.provenance.json --commit '${{ github.sha }}' --run-id '${{ github.run_id }}'
+          python tools/supply_chain_v50.py verify-provenance --archive dist/ai-fullstack-dev-skills-v5.0.zip --statement dist/ai-fullstack-dev-skills-v5.0.provenance.json
+          python tools/supply_chain_v50.py sbom --output dist/ai-fullstack-dev-skills-v5.0.sbom.json
+      - name: Upload verified candidate and SHA256 sidecar
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: v50-release-candidate
+          path: |
+            dist/ai-fullstack-dev-skills-v5.0.zip
+            dist/ai-fullstack-dev-skills-v5.0.zip.sha256
+            dist/ai-fullstack-dev-skills-v5.0.provenance.json
+            dist/ai-fullstack-dev-skills-v5.0.sbom.json
+          if-no-files-found: error

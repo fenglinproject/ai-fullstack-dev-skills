@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "toolkit_version": "4.7",
+  "profile": "smoke",
+  "timestamp": "2026-11-11T08:59:14.288509+00:00",
+  "actually_executed": true,
+  "steps": [
+    {
+      "name": "catalog",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "tools/audit_catalog.py"
+      ],
+      "status": "passed",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "duration_seconds": 0.838
+    },
+    {
+      "name": "router",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "tools/benchmark_router.py"
+      ],
+      "status": "passed",
+      "timeout_seconds": 35,
+      "exit_code": 0,
+      "duration_seconds": 0.859
+    },
+    {
+      "name": "v4-unit",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "tests.test_v40",
+        "-q"
+      ],
+      "status": "passed",
+      "timeout_seconds": 75,
+      "exit_code": 0,
+      "duration_seconds": 18.56
+    },
+    {
+      "name": "todo-api",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "status": "passed",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "duration_seconds": 1.192
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "planned": 0
+  },
+  "note": "Bundled test commands only. No user project execution, network calls, remote PR, or model invocation; local toolkit fixture tests are NOT sandboxed."
+}

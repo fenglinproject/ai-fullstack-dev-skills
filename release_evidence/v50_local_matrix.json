@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "toolkit_version": "5.0",
+  "local_runtime": "Linux/Python 3.13.5",
+  "timestamp_utc": "2026-11-13T06:59:19.065288+00:00",
+  "shard_mode": "four independent isolated process groups; no skipped/failed/timeout modules",
+  "summary": {
+    "modules": 25,
+    "tests": 431
+  },
+  "shards": [
+    {
+      "shard": "core",
+      "modules_passed": 7,
+      "tests_reported": 106,
+      "elapsed_seconds": 33.797,
+      "modules": [
+        {
+          "module": "test_agent_bridge",
+          "source_sha256": "1798b34964d51142e4bed5cef90e2cd6861fd642eb3616501b289591b4bb126e",
+          "status": "passed",
+          "tests_reported": 17,
+          "exit_code": 0,
+          "elapsed_seconds": 4.598
+        },
+        {
+          "module": "test_loop",
+          "source_sha256": "f35e99436b49b505d7496e3524ceb6f0daef54b264d85ac7d3061b68fd339f45",
+          "status": "passed",
+          "tests_reported": 15,
+          "exit_code": 0,
+          "elapsed_seconds": 7.293
+        },
+        {
+          "module": "test_loop_cli",
+          "source_sha256": "a4f687c77616885afcfe4c60ea46a960fb075c4166b12e0db663073149105b70",
+          "status": "passed",
+          "tests_reported": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 12.328
+        },
+        {
+          "module": "test_orchestrator",
+          "source_sha256": "37596f78a98f9abbd12656a424abd58aed11f16325a41c4e5acead87496c8fea",
+          "status": "passed",
+          "tests_reported": 23,
+          "exit_code": 0,
+          "elapsed_seconds": 1.3
+        },
+        {
+          "module": "test_v21",
+          "source_sha256": "a17ba9332519cae01100aae57f63b795b698170cdc7e503a7904cf408c36acbe",
+          "status": "passed",
+          "tests_reported": 28,
+          "exit_code": 0,
+          "elapsed_seconds": 3.318
+        },
+        {
+          "module": "test_workflow",
+          "source_sha256": "4ae53b53127d1255234e5e2868e9a22191c3083bb79d97b507d99c2c857ee067",
+          "status": "passed",
+          "tests_reported": 21,
+          "exit_code": 0,
+          "elapsed_seconds": 3.036
+        },
+        {
+          "module": "test_workflow_demo",
+          "source_sha256": "4f5e095048980bedbe8cc86a5cda31ceb4cd057f0b8f91699e743dc3507b31a1",
+          "status": "passed",
+          "tests_reported": 1,
+          "exit_code": 0,
+          "elapsed_seconds": 1.923
+        }
+      ]
+    },
+    {
+      "shard": "analysis",
+      "modules_passed": 7,
+      "tests_reported": 143,
+      "elapsed_seconds": 26.81,
+      "modules": [
+        {
+          "module": "test_v33",
+          "source_sha256": "ef2027c5b697456f6b260537ec6054b01af6110b1c20b7f80542c6e3a21c6509",
+          "status": "passed",
+          "tests_reported": 15,
+          "exit_code": 0,
+          "elapsed_seconds": 3.551
+        },
+        {
+          "module": "test_v34",
+          "source_sha256": "c269a8c9d6ea67ae8593c74ea9b4570b05efb60dac5acac43b31aae289455ed3",
+          "status": "passed",
+          "tests_reported": 20,
+          "exit_code": 0,
+          "elapsed_seconds": 5.76
+        },
+        {
+          "module": "test_v35",
+          "source_sha256": "5e9bb67539f72fe720aa808ac11e15326791cc0124e8e9043077c79fa7d98500",
+          "status": "passed",
+          "tests_reported": 25,
+          "exit_code": 0,
+          "elapsed_seconds": 1.107
+        },
+        {
+          "module": "test_v36",
+          "source_sha256": "8881fab03265f9436d2b1bb0471c7e0513f7ed705a2edcd47c6e4d4590a843d5",
+          "status": "passed",
+          "tests_reported": 19,
+          "exit_code": 0,
+          "elapsed_seconds": 1.265
+        },
+        {
+          "module": "test_v37",
+          "source_sha256": "c1ee9043dcb607dc6145e6a327945939fd9288543d33af692dba69293a4e0cb9",
+          "status": "passed",
+          "tests_reported": 21,
+          "exit_code": 0,
+          "elapsed_seconds": 4.033
+        },
+        {
+          "module": "test_v38",
+          "source_sha256": "9fe7603d622015fcb713636ffa7469a95faae657b2fa6016d4af7e35f4bf4f28",
+          "status": "passed",
+          "tests_reported": 24,
+          "exit_code": 0,
+          "elapsed_seconds": 4.442
+        },
+        {
+          "module": "test_v39",
+          "source_sha256": "d33b324e0614eea1414df5564cbd9508923a8ea3f8e7e23336f9e9d438cbcb94",
+          "status": "passed",
+          "tests_reported": 19,
+          "exit_code": 0,
+          "elapsed_seconds": 6.646
+        }
+      ]
+    },
+    {
+      "shard": "platform",
+      "modules_passed": 3,
+      "tests_reported": 36,
+      "elapsed_seconds": 30.296,
+      "modules": [
+        {
+          "module": "test_v40",
+          "source_sha256": "4bbc509555295b62082afd477f3371dd358569c11494eafc9184bc6da4c0423e",
+          "status": "passed",
+          "tests_reported": 13,
+          "exit_code": 0,
+          "elapsed_seconds": 23.313
+        },
+        {
+          "module": "test_v41",
+          "source_sha256": "ea4498dd9a73c49fa8b6c25e2d451cdb68bc8bbc4813e3065c82548f339f729e",
+          "status": "passed",
+          "tests_reported": 10,
+          "exit_code": 0,
+          "elapsed_seconds": 3.878
+        },
+        {
+          "module": "test_v42",
+          "source_sha256": "1ca71f374ee8331f8a6b59597a506da5be98a2d33203d170aa1d5402a7b2b73b",
+          "status": "passed",
+          "tests_reported": 13,
+          "exit_code": 0,
+          "elapsed_seconds": 3.105
+        }
+      ]
+    },
+    {
+      "shard": "collaboration",
+      "modules_passed": 8,
+      "tests_reported": 146,
+      "elapsed_seconds": 46.339,
+      "modules": [
+        {
+          "module": "test_v43",
+          "source_sha256": "470480b270eca6096c95c735ff6f0ac9116ad419a19cd2515d2e48d17514e055",
+          "status": "passed",
+          "tests_reported": 18,
+          "exit_code": 0,
+          "elapsed_seconds": 12.45
+        },
+        {
+          "module": "test_v44",
+          "source_sha256": "fa006dae84d2f41ae36efcfcde50e18eea9caafa35a4af13a666db97858a779f",
+          "status": "passed",
+          "tests_reported": 27,
+          "exit_code": 0,
+          "elapsed_seconds": 5.551
+        },
+        {
+          "module": "test_v45",
+          "source_sha256": "cbc243fd4e0d3ffdb66bd8cc6245ffcd81991c6b76ebffb0b70d3d77666948b0",
+          "status": "passed",
+          "tests_reported": 9,
+          "exit_code": 0,
+          "elapsed_seconds": 1.4
+        },
+        {
+          "module": "test_v46",
+          "source_sha256": "e2737607030997939d00f1f66f68bd9296d0260b797998168b4fa5a87a466707",
+          "status": "passed",
+          "tests_reported": 15,
+          "exit_code": 0,
+          "elapsed_seconds": 9.939
+        },
+        {
+          "module": "test_v47",
+          "source_sha256": "0aaaf4f8332be6c22ff3cd8626f1bec45b54279caca185fbcfeb69926f85ff39",
+          "status": "passed",
+          "tests_reported": 9,
+          "exit_code": 0,
+          "elapsed_seconds": 5.144
+        },
+        {
+          "module": "test_v48",
+          "source_sha256": "19c245b215fe0c6255010e7cf86f99057d6bb12d7b0886113fb810b3152f72ad",
+          "status": "passed",
+          "tests_reported": 24,
+          "exit_code": 0,
+          "elapsed_seconds": 1.363
+        },
+        {
+          "module": "test_v49",
+          "source_sha256": "91e428939b82af10feae20dc21f4a8e29dea44d568162f4ce541c6e2a25f84f8",
+          "status": "passed",
+          "tests_reported": 18,
+          "exit_code": 0,
+          "elapsed_seconds": 2.135
+        },
+        {
+          "module": "test_v50",
+          "source_sha256": "1273442c97c2132f25ffc46dd26ab8113318a77f93335b10df86739d46aaa84b",
+          "status": "passed",
+          "tests_reported": 26,
+          "exit_code": 0,
+          "elapsed_seconds": 8.356
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No actual GitHub-hosted Windows/macOS results",
+    "Unsigned local verification data; not a platform attestation",
+    "TypeScript 5.8.3 installed locally; pinned 5.9.3 npm ci not executed online",
+    "Single-command monolithic suite timed out in current runtime; four shards passed independently"
+  ]
+}

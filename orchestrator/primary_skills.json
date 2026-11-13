@@ -1,0 +1,453 @@
+{
+  "description": "稳定的 27 个主技能入口；所有 144 个原始技能仍可通过精确 ID 调用。",
+  "primary": [
+    "core.project_orchestrator",
+    "core.project_context_collector",
+    "core.scope_controller",
+    "core.change_request_manager",
+    "requirements.idea_to_requirements",
+    "requirements.mvp_scope_definition",
+    "requirements.prd_generator",
+    "requirements.acceptance_criteria_builder",
+    "product_design.information_architecture",
+    "product_design.user_flow_design",
+    "product_design.ui_style_guide",
+    "architecture.tech_stack_selection",
+    "architecture.architecture_blueprint",
+    "architecture.auth_architecture",
+    "database.entity_modeling",
+    "database.table_design",
+    "database.migration_seed_plan",
+    "api.openapi_spec_generator",
+    "backend.crud_module_generator",
+    "backend.auth_login_register",
+    "backend.order_payment_flow",
+    "frontend.static_page_build",
+    "integration_debugging.systematic_debugging",
+    "testing.test_driven_development",
+    "security.full_security_audit",
+    "deployment_ops.docker_deploy",
+    "deployment_ops.rollback_plan",
+    "iteration.version_planning",
+    "code_quality.code_review",
+    "documentation.docs_orchestrator"
+  ],
+  "routes": [
+    {
+      "terms": [
+        "跨域鉴权",
+        "修复跨域",
+        "cors鉴权"
+      ],
+      "id": "integration_debugging.cors_auth_debug"
+    },
+    {
+      "terms": [
+        "数据库迁移",
+        "表结构迁移"
+      ],
+      "id": "database.migration_seed_plan"
+    },
+    {
+      "terms": [
+        "prd",
+        "产品需求文档",
+        "需求规格说明"
+      ],
+      "id": "requirements.prd_generator"
+    },
+    {
+      "terms": [
+        "文件上传",
+        "上传文件",
+        "文件存储",
+        "upload"
+      ],
+      "id": "backend.file_upload_storage"
+    },
+    {
+      "terms": [
+        "权限管理",
+        "角色权限",
+        "rbac",
+        "数据权限",
+        "越权"
+      ],
+      "id": "backend.rbac_role_menu"
+    },
+    {
+      "terms": [
+        "权限模型",
+        "权限架构"
+      ],
+      "id": "architecture.permission_model"
+    },
+    {
+      "terms": [
+        "在线修复",
+        "线上bug",
+        "线上故障",
+        "hotfix"
+      ],
+      "id": "iteration.hotfix_workflow"
+    },
+    {
+      "terms": [
+        "库存扣减",
+        "订单状态",
+        "业务逻辑",
+        "复杂业务"
+      ],
+      "id": "backend.complex_business_logic"
+    },
+    {
+      "terms": [
+        "项目结构",
+        "仓库结构",
+        "目录规范"
+      ],
+      "id": "architecture.repo_structure_standard"
+    },
+    {
+      "terms": [
+        "环境变量",
+        "env.example"
+      ],
+      "id": "project_startup_docs.env_example_generator"
+    },
+    {
+      "terms": [
+        "代码质量",
+        "代码审查",
+        "code review"
+      ],
+      "id": "code_quality.code_review"
+    },
+    {
+      "terms": [
+        "列表筛选",
+        "列表分页",
+        "搜索分页"
+      ],
+      "id": "frontend.list_search_pagination"
+    },
+    {
+      "terms": [
+        "小程序配置",
+        "manifest.json",
+        "pages.json"
+      ],
+      "id": "frontend.miniprogram_config_generator"
+    },
+    {
+      "terms": [
+        "测试计划",
+        "测试方案"
+      ],
+      "id": "testing.test_plan"
+    },
+    {
+      "terms": [
+        "兼容性测试"
+      ],
+      "id": "testing.compatibility_test_cases"
+    },
+    {
+      "terms": [
+        "安全门禁",
+        "安全验收"
+      ],
+      "id": "security.security_acceptance_gate"
+    },
+    {
+      "terms": [
+        "cors",
+        "跨域",
+        "网络鉴权"
+      ],
+      "id": "integration_debugging.cors_auth_debug"
+    },
+    {
+      "terms": [
+        "数据库索引",
+        "查询索引"
+      ],
+      "id": "database.index_design"
+    },
+    {
+      "terms": [
+        "性能优化",
+        "慢查询"
+      ],
+      "id": "code_quality.performance_optimization"
+    },
+    {
+      "terms": [
+        "api mock",
+        "接口模拟"
+      ],
+      "id": "api.api_mock_validation"
+    },
+    {
+      "terms": [
+        "需求变更"
+      ],
+      "id": "core.change_request_manager"
+    },
+    {
+      "terms": [
+        "项目启动",
+        "搭建工程"
+      ],
+      "id": "core.project_orchestrator"
+    },
+    {
+      "terms": [
+        "整体架构",
+        "技术架构"
+      ],
+      "id": "architecture.architecture_blueprint"
+    },
+    {
+      "terms": [
+        "第三方服务",
+        "第三方支付"
+      ],
+      "id": "architecture.third_party_service_plan"
+    },
+    {
+      "terms": [
+        "生产监控",
+        "线上监控"
+      ],
+      "id": "deployment_ops.production_monitoring"
+    },
+    {
+      "terms": [
+        "认证架构"
+      ],
+      "id": "architecture.auth_architecture"
+    },
+    {
+      "terms": [
+        "灰度发布"
+      ],
+      "id": "deployment_ops.gray_release"
+    },
+    {
+      "terms": [
+        "编写接口测试",
+        "api测试"
+      ],
+      "id": "testing.api_test_cases"
+    },
+    {
+      "terms": [
+        "测试回归",
+        "回归测试"
+      ],
+      "id": "testing.regression_test_suite"
+    },
+    {
+      "terms": [
+        "生成启动文档",
+        "如何启动项目"
+      ],
+      "id": "project_startup_docs.project_startup_docs_generator"
+    },
+    {
+      "terms": [
+        "想法",
+        "需求澄清",
+        "把想法变成需求",
+        "产品方向"
+      ],
+      "id": "requirements.idea_to_requirements"
+    },
+    {
+      "terms": [
+        "mvp",
+        "最小可行",
+        "砍功能",
+        "范围定义"
+      ],
+      "id": "requirements.mvp_scope_definition"
+    },
+    {
+      "terms": [
+        "原型",
+        "用户流程",
+        "页面流程"
+      ],
+      "id": "product_design.user_flow_design"
+    },
+    {
+      "terms": [
+        "ui",
+        "设计风格",
+        "视觉规范",
+        "组件库"
+      ],
+      "id": "product_design.ui_style_guide"
+    },
+    {
+      "terms": [
+        "技术栈",
+        "框架选型",
+        "框架选择"
+      ],
+      "id": "architecture.tech_stack_selection"
+    },
+    {
+      "terms": [
+        "数据库",
+        "数据表",
+        "表结构",
+        "索引"
+      ],
+      "id": "database.table_design"
+    },
+    {
+      "terms": [
+        "迁移",
+        "migration",
+        "schema",
+        "ddl"
+      ],
+      "id": "database.migration_seed_plan"
+    },
+    {
+      "terms": [
+        "接口文档",
+        "openapi",
+        "swagger",
+        "api设计"
+      ],
+      "id": "api.openapi_spec_generator"
+    },
+    {
+      "terms": [
+        "后端",
+        "crud",
+        "业务接口"
+      ],
+      "id": "backend.crud_module_generator"
+    },
+    {
+      "terms": [
+        "登录",
+        "注册",
+        "鉴权",
+        "身份认证",
+        "oauth"
+      ],
+      "id": "backend.auth_login_register"
+    },
+    {
+      "terms": [
+        "支付",
+        "退款",
+        "回调验签",
+        "支付回调"
+      ],
+      "id": "backend.order_payment_flow"
+    },
+    {
+      "terms": [
+        "前端",
+        "页面",
+        "按钮",
+        "样式",
+        "css",
+        "布局",
+        "表单"
+      ],
+      "id": "frontend.static_page_build"
+    },
+    {
+      "terms": [
+        "表单验证",
+        "表单校验",
+        "提交表单"
+      ],
+      "id": "frontend.form_validation_submit"
+    },
+    {
+      "terms": [
+        "bug",
+        "报错",
+        "调试",
+        "无法运行",
+        "报500",
+        "修复错误"
+      ],
+      "id": "integration_debugging.systematic_debugging"
+    },
+    {
+      "terms": [
+        "单元测试",
+        "tdd",
+        "测试驱动",
+        "写测试"
+      ],
+      "id": "testing.test_driven_development"
+    },
+    {
+      "terms": [
+        "安全审计",
+        "漏洞",
+        "渗透测试",
+        "安全检查"
+      ],
+      "id": "security.full_security_audit"
+    },
+    {
+      "terms": [
+        "docker",
+        "容器部署",
+        "dockerfile"
+      ],
+      "id": "deployment_ops.docker_deploy"
+    },
+    {
+      "terms": [
+        "发布",
+        "上线",
+        "部署",
+        "运维"
+      ],
+      "id": "deployment_ops.server_prepare"
+    },
+    {
+      "terms": [
+        "回滚",
+        "rollback"
+      ],
+      "id": "deployment_ops.rollback_plan"
+    },
+    {
+      "terms": [
+        "代码审查",
+        "code review",
+        "审查代码"
+      ],
+      "id": "code_quality.code_review"
+    },
+    {
+      "terms": [
+        "文档",
+        "readme",
+        "使用手册"
+      ],
+      "id": "documentation.docs_orchestrator"
+    },
+    {
+      "terms": [
+        "迭代",
+        "版本规划",
+        "下一版本"
+      ],
+      "id": "iteration.version_planning"
+    }
+  ]
+}

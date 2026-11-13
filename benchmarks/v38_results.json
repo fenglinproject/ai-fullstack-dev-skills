@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "generated-visible-fixture",
+  "packages": 48,
+  "code_files": 96,
+  "cold_parse_count": 96,
+  "warm_parse_count": 0,
+  "single_edit_parse_count": 1,
+  "cold_index_ms": 827.158,
+  "warm_index_ms": 13.229,
+  "single_edit_index_ms": 189.587,
+  "candidate_tests": 12,
+  "candidate_full_suite_required": true,
+  "candidate_caution_flags": [
+    "impact-depth-limit-reached"
+  ],
+  "edge_delta_count": 0,
+  "impact_found": true,
+  "dependency_correct": true,
+  "test_candidate_found": true,
+  "caution": "Local timings include disk/cache overhead and depend on machine load; not comparable across environments or real repositories.",
+  "model_calls": 0
+}

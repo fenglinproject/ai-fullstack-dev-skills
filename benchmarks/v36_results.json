@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "fixture_sha256": "2179bea101bb4a158c9e95b188c35703d49f6ead73ee1df66690e6e6c569c834",
+  "top_k": 3,
+  "symbols": {
+    "summary": {
+      "cases": 14,
+      "correct": 14,
+      "accuracy": 1.0
+    },
+    "top1": 12,
+    "cases_detail": [
+      {
+        "id": "inventory-restore",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "inventory-discount",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "inventory-order",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "inventory-tax",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "inventory-find",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "notes-save",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "notes-search",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "notes-token",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "notes-archive",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "notes-list",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "todo-main",
+        "project": "examples/runnable-todo",
+        "split": "dev",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "workflow-greet",
+        "project": "examples/workflow-demo",
+        "split": "holdout",
+        "correct": true,
+        "rank": 1,
+        "top1": true,
+        "has_candidate": true
+      },
+      {
+        "id": "unknown-python-symbol",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "holdout",
+        "correct": true,
+        "rank": null,
+        "top1": false,
+        "has_candidate": false
+      },
+      {
+        "id": "unknown-notes-symbol",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "dev",
+        "correct": true,
+        "rank": null,
+        "top1": false,
+        "has_candidate": false
+      }
+    ]
+  },
+  "traces": {
+    "summary": {
+      "cases": 8,
+      "correct": 8,
+      "accuracy": 1.0
+    },
+    "top1": 4,
+    "cases_detail": [
+      {
+        "id": "valid-py",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "top1": true,
+        "hints_count": 1
+      },
+      {
+        "id": "valid-pytest",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "holdout",
+        "correct": true,
+        "top1": true,
+        "hints_count": 1
+      },
+      {
+        "id": "valid-notes",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "dev",
+        "correct": true,
+        "top1": true,
+        "hints_count": 1
+      },
+      {
+        "id": "valid-absolute",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "top1": true,
+        "hints_count": 1
+      },
+      {
+        "id": "outside-traversal",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "top1": false,
+        "hints_count": 0
+      },
+      {
+        "id": "unrelated-noise",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "top1": false,
+        "hints_count": 0
+      },
+      {
+        "id": "missing-file",
+        "project": "benchmarks/projects/notes-workspace",
+        "split": "holdout",
+        "correct": true,
+        "top1": false,
+        "hints_count": 0
+      },
+      {
+        "id": "external-abs",
+        "project": "benchmarks/projects/inventory-service",
+        "split": "dev",
+        "correct": true,
+        "top1": false,
+        "hints_count": 0
+      }
+    ]
+  },
+  "by_split": {
+    "dev": {
+      "symbols": {
+        "cases": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      }
+    },
+    "holdout": {
+      "symbols": {
+        "cases": 7,
+        "correct": 7,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "by_project": {
+    "benchmarks/projects/inventory-service": {
+      "symbols": {
+        "cases": 6,
+        "correct": 6,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      }
+    },
+    "benchmarks/projects/notes-workspace": {
+      "symbols": {
+        "cases": 6,
+        "correct": 6,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      }
+    },
+    "examples/runnable-todo": {
+      "symbols": {
+        "cases": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "examples/workflow-demo": {
+      "symbols": {
+        "cases": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "traces": {
+        "cases": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    }
+  },
+  "note": "Curated, visible dev/holdout fixtures, including synthetic projects and package examples. These are not unseen real-repository or live-model repair results."
+}

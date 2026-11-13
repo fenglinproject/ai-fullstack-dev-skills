@@ -1,0 +1,9 @@
+{
+  "id":"python-fastapi-postgres", "name":"Python FastAPI + PostgreSQL", "status":"recipe_only_unverified",
+  "runtime":"Python 3.11+", "database":"PostgreSQL 16+", "frontend":"choose Vue, React, or server-rendered HTML",
+  "backend":"FastAPI, Pydantic, SQLAlchemy and Alembic",
+  "recommended_for":["python developers","data-heavy web apps"],
+  "steps":["create virtual environment in project/backend","install dependencies in an authorized environment","configure Alembic for migration","add unit and integration tests"],
+  "minimum_security":["password hashing","server-side authorization","CORS allowlist","environment secret isolation"],
+  "notes":"Recipe only, requires external packages and a database; not verified in this archive."
+}

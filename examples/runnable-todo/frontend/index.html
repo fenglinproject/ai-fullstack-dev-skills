@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>任务清单 · AI Skills 示例</title><link rel="stylesheet" href="/style.css"></head>
+<body><main><header><p class="eyebrow">AI FULLSTACK SKILLS / RUNNABLE DEMO</p><h1>我的任务清单</h1><p>本地演示：注册、登录、创建任务、标记完成、删除任务。不同账户的数据彼此隔离。</p></header>
+<section id="auth"><h2>账号</h2><label>邮箱<input id="email" type="email" autocomplete="username" placeholder="you@example.com"></label><label>密码<input id="password" type="password" autocomplete="current-password" placeholder="至少 8 位"></label><div class="actions"><button id="register">注册</button><button id="login" class="subtle">登录</button></div></section>
+<section id="tasks" hidden><h2>待办任务</h2><form id="newTask"><input id="title" maxlength="120" required placeholder="输入新任务..." aria-label="任务标题"><button type="submit">新增</button></form><ul id="list"></ul><button id="logout" class="subtle">退出账户</button></section><p id="message" role="status" aria-live="polite"></p><footer>仅供本地学习演示，非生产系统。</footer></main><script src="/app.js"></script></body></html>

@@ -1,0 +1,9 @@
+{
+  "id":"vue3-node-postgres", "name":"Vue 3 + TypeScript + Node.js + PostgreSQL", "status":"recipe_only_unverified",
+  "runtime":"Node.js LTS", "database":"PostgreSQL 16+", "frontend":"Vue 3 + TypeScript + Vite",
+  "backend":"Node.js + TypeScript (Express or Fastify)",
+  "recommended_for":["web CRUD admin","fullstack SaaS","multi-user MVP"],
+  "steps":["initialize frontend in project/frontend","initialize backend in project/backend","write migration in project/sql","add tests in project/tests","configure project/.ai/checks.json before running"],
+  "minimum_security":["server-side authorization","input validation","parameterized SQL","test database isolation","environment secrets never committed"],
+  "notes":"Design recipe, not a prebuilt verified project; database and third-party dependencies are not installed by this kit."
+}

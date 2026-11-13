@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "toolkit_version": "5.0",
+  "python_ci_minor": "3.11",
+  "node_ci_major": 22,
+  "typescript_ci_exact": "5.9.3",
+  "python_third_party_runtime_dependencies": [],
+  "install_policy": "npm ci uses committed integrity-checked TypeScript 5.9.3 lockfile; GitHub Actions pinned to immutable full commit SHAs; no Python third-party runtime packages."
+}

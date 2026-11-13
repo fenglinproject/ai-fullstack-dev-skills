@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "retrieval_cases": [
+    {"id":"format-symbol","project":"examples/workflow-demo","task":"greet function","expected_file":"src/formatter.py"},
+    {"id":"format-test","project":"examples/workflow-demo","task":"test greeting formatter","expected_file":"tests/test_formatter.py"},
+    {"id":"format-change","project":"examples/workflow-demo","task":"formatter greet punctuation","expected_file":"src/formatter.py"},
+    {"id":"api-registration","project":"examples/runnable-todo","task":"api authentication register user","expected_file":"backend/app.py"},
+    {"id":"ui-styles","project":"examples/runnable-todo","task":"frontend css style","expected_file":"frontend/style.css"},
+    {"id":"http-server","project":"examples/runnable-todo","task":"backend server http","expected_file":"backend/server.py"},
+    {"id":"api-tests","project":"examples/runnable-todo","task":"test user login api","expected_file":"tests/test_api.py"},
+    {"id":"todo-database","project":"examples/runnable-todo","task":"todo task database","expected_file":"backend/app.py"},
+    {"id":"html-entry","project":"examples/runnable-todo","task":"index html","expected_file":"frontend/index.html"},
+    {"id":"client-javascript","project":"examples/runnable-todo","task":"frontend app js","expected_file":"frontend/app.js"}
+  ],
+  "failure_cases": [
+    {"id":"missing-dep","diagnostic":"ModuleNotFoundError: No module named 'some_dependency'","category":"dependency_missing"},
+    {"id":"invalid-syntax","diagnostic":"SyntaxError: invalid syntax","category":"syntax_error"},
+    {"id":"failed-assert","diagnostic":"AssertionError: expected 200 but got 500","category":"assertion_failure"},
+    {"id":"bad-type","diagnostic":"TypeError: unsupported operand type","category":"type_error"},
+    {"id":"service-offline","diagnostic":"ConnectionRefusedError: [Errno 111] Connection refused","category":"connection_failure"},
+    {"id":"no-permission","diagnostic":"PermissionError: [Errno 13] Permission denied","category":"permission_failure"},
+    {"id":"timeout","diagnostic":"TimeoutError: operation timed out","category":"timeout"},
+    {"id":"unknown","diagnostic":"Unexpected flaky result without a traceback","category":"unknown"}
+  ]
+}

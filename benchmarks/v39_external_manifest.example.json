@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "commit_sha": "REPLACE_WITH_40_CHARACTER_GIT_HEAD",
+  "symbol_cases": [
+    {
+      "id": "symbol-001",
+      "query": "example_function",
+      "expected_path": "src/example.py",
+      "expected_symbol": "example_function"
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "impact-001",
+      "changed": ["src/example.py"],
+      "expected_test": "tests/test_example.py"
+    }
+  ]
+}

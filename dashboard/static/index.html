@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Fullstack Studio · 项目控制台</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script defer src="/static/app.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">F</span><div><strong>FULLSTACK <span>STUDIO</span></strong><small>PROJECT OPERATIONS / V4.1</small></div></div>
+    <div class="sidebar-label">WORKSPACE</div>
+    <div class="project-tile"><div class="project-emblem">{ }</div><div class="project-details"><strong id="projectName">加载项目中…</strong><small id="projectPath">本地工作区</small></div></div>
+    <div class="sidebar-label navigation-label">NAVIGATION</div>
+    <nav id="navigation" aria-label="控制台模块">
+      <button type="button" class="nav-item active" data-view="overview" aria-pressed="true"><span class="nav-icon">◫</span><span>项目总览</span></button>
+      <button type="button" class="nav-item" data-view="tasks" aria-pressed="false"><span class="nav-icon">☷</span><span>任务管理</span><span class="nav-count" id="navTasks">0</span></button>
+      <button type="button" class="nav-item" data-view="tests" aria-pressed="false"><span class="nav-icon">✓</span><span>测试与验收</span></button>
+      <button type="button" class="nav-item" data-view="repairs" aria-pressed="false"><span class="nav-icon">↺</span><span>AI 修复记录</span></button>
+      <button type="button" class="nav-item" data-view="changes" aria-pressed="false"><span class="nav-icon">⎇</span><span>代码变更</span></button>
+      <button type="button" class="nav-item" data-view="git" aria-pressed="false"><span class="nav-icon">◇</span><span>Git 仓库</span></button>
+    </nav>
+    <div class="sidebar-bottom"><div class="guard-dot"></div><div><strong>READ-ONLY MODE</strong><small>本地运行 · 不执行代码 · 不发送外部请求</small></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="breadcrumbs">工作区 <span>/</span> <strong id="breadcrumb">项目总览</strong></div><div class="top-actions"><span class="connection-indicator"><span class="live-dot"></span> LOCAL</span><button id="refresh" type="button" class="refresh-button" aria-label="刷新数据">↻ <span>刷新数据</span></button></div></header>
+    <div class="content">
+      <section class="page-heading"><div><p class="eyebrow">AI FULLSTACK DEVELOPMENT / CONTROL CENTER</p><h1 id="pageTitle">项目总览</h1><p id="pageDesc" class="page-desc">统一查看项目进度、验证证据与工程状态。</p></div><div class="update-info">最近同步 <strong id="lastUpdate">—</strong><small id="syncState" role="status" aria-live="polite">正在读取</small></div></section>
+      <div id="notices" class="notices" aria-live="polite"></div>
+      <section id="overview" class="view">
+        <div class="metric-grid">
+          <article class="metric-card"><div class="metric-head"><span>总任务</span><span class="metric-icon">☷</span></div><strong id="metricTasks">—</strong><small>当前项目任务总数</small></article>
+          <article class="metric-card"><div class="metric-head"><span>已完成</span><span class="metric-icon green">✓</span></div><strong id="metricDone">—</strong><small id="metricDoneSub">等待任务记录</small></article>
+          <article class="metric-card"><div class="metric-head"><span>最近报告通过</span><span class="metric-icon blue">⌘</span></div><strong id="metricPassed">—</strong><small id="metricPassedSub">已记录的本地验收结果</small></article>
+          <article class="metric-card"><div class="metric-head"><span>需要关注</span><span class="metric-icon amber">!</span></div><strong id="metricWarnings">—</strong><small>全部阻塞任务与展示任务的证据异常</small></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel flow-panel"><div class="panel-heading"><div><span class="overline">WORKFLOW</span><h2>任务进度分布</h2></div><span class="subtle-label">实时任务状态</span></div><div class="distribution"><div class="progress-ring" id="progressRing"><div class="progress-inner"><strong id="completionPercent">0%</strong><small>完成比例</small></div></div><div class="legend" id="taskLegend"></div></div><div class="progress-strip" id="progressStrip"></div></article>
+          <article class="panel"><div class="panel-heading"><div><span class="overline">QUALITY</span><h2>开发质量概览</h2></div><span class="subtle-label">本地数据</span></div><div class="quality-rows" id="qualityRows"></div><div class="panel-footnote">统计基于当前可访问的本地记录，不代表生产环境质量。</div></article>
+          <article class="panel"><div class="panel-heading"><div><span class="overline">RECENT VERIFICATION</span><h2>最近的测试报告</h2></div><button class="text-button" type="button" data-goto="tests">查看最近报告 →</button></div><div id="recentReports" class="record-list"></div></article>
+          <article class="panel"><div class="panel-heading"><div><span class="overline">REPOSITORY</span><h2>仓库与修复状态</h2></div><button class="text-button" type="button" data-goto="git">Git 详情 →</button></div><div id="repoOverview" class="repo-overview"></div></article>
+        </div>
+      </section>
+      <section id="tasks" class="view" hidden><div class="panel"><div class="panel-heading"><div><span class="overline">TASK TRACKER</span><h2>最近更新的任务（最多 300 项）</h2></div><div class="filters"><label class="search-control"><span>⌕</span><input id="taskSearch" type="search" placeholder="搜索任务 ID / 名称" aria-label="搜索任务"></label><select id="taskFilter" aria-label="筛选任务状态"><option value="all">所有状态</option><option value="todo">待办</option><option value="in_progress">进行中</option><option value="blocked">已阻塞</option><option value="done">已完成</option></select></div></div><div class="table-wrap"><table><thead><tr><th>任务</th><th>状态</th><th>验收证据</th><th>最近更新</th></tr></thead><tbody id="taskRows"></tbody></table></div></div></section>
+      <section id="tests" class="view" hidden><div class="panel"><div class="panel-heading"><div><span class="overline">VALIDATION HISTORY</span><h2>最近测试与验收报告（最多 60 项）</h2></div><span class="subtle-label">不展示测试输出或敏感日志</span></div><div class="table-wrap"><table><thead><tr><th>报告文件</th><th>执行结果</th><th>检查数量</th><th>完成时间</th></tr></thead><tbody id="reportRows"></tbody></table></div></div></section>
+      <section id="repairs" class="view" hidden><div class="metric-grid repair-metrics"><article class="metric-card"><div class="metric-head"><span>修复会话</span><span class="metric-icon blue">↺</span></div><strong id="repairRuns">—</strong><small>有状态记录的会话</small></article><article class="metric-card"><div class="metric-head"><span>完成会话</span><span class="metric-icon green">✓</span></div><strong id="repairCompleted">—</strong><small>本地状态标记为完成</small></article><article class="metric-card"><div class="metric-head"><span>尝试次数</span><span class="metric-icon">⌁</span></div><strong id="repairAttempts">—</strong><small>包括测试失败的尝试</small></article><article class="metric-card"><div class="metric-head"><span>耗尽轮次</span><span class="metric-icon amber">!</span></div><strong id="repairExhausted">—</strong><small>达到修复次数上限</small></article></div><div class="panel"><div class="panel-heading"><div><span class="overline">REPAIR JOURNAL</span><h2>多轮修复记录</h2></div><span class="subtle-label">只显示状态与次数</span></div><div class="table-wrap"><table><thead><tr><th>会话 ID</th><th>状态</th><th>轮数</th><th>成功 / 失败尝试</th></tr></thead><tbody id="repairRows"></tbody></table></div></div></section>
+      <section id="changes" class="view" hidden><div class="panel"><div class="panel-heading"><div><span class="overline">CHANGE MANIFESTS</span><h2>代码变更历史</h2></div><span class="subtle-label">只读取变更元数据，不展示代码差异</span></div><div class="table-wrap"><table><thead><tr><th>变更 ID</th><th>关联任务</th><th>状态</th><th>文件数量</th></tr></thead><tbody id="changeRows"></tbody></table></div></div></section>
+      <section id="git" class="view" hidden><div class="panel"><div class="panel-heading"><div><span class="overline">GIT WORKTREE</span><h2>本地仓库状态</h2></div><span class="subtle-label">不执行提交、推送或 checkout</span></div><div class="git-summary" id="gitSummary"></div><div class="table-wrap"><table><thead><tr><th>文件</th><th>Git 状态</th></tr></thead><tbody id="gitRows"></tbody></table></div></div></section>
+    </div>
+    <footer class="footer"><span>AI FULLSTACK DEV SKILLS <b>V4.2</b></span><span>PRIVATE LOCAL VIEWER · NO CODE EXECUTION</span></footer>
+  </main>
+</div>
+</body>
+</html>

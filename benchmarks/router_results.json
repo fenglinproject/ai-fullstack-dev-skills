@@ -1,0 +1,259 @@
+{
+  "sample_count": 28,
+  "skill_top1": 28,
+  "mode_accuracy": 28,
+  "cases": [
+    {
+      "task": "修改按钮颜色",
+      "expected": "frontend.static_page_build",
+      "actual": "frontend.static_page_build",
+      "expected_mode": "light",
+      "actual_mode": "light",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "写一份PRD",
+      "expected": "requirements.prd_generator",
+      "actual": "requirements.prd_generator",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "生成一份MVP范围定义",
+      "expected": "requirements.mvp_scope_definition",
+      "actual": "requirements.mvp_scope_definition",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "我要选技术栈",
+      "expected": "architecture.tech_stack_selection",
+      "actual": "architecture.tech_stack_selection",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "设计数据库表结构",
+      "expected": "database.table_design",
+      "actual": "database.table_design",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "数据库索引设计",
+      "expected": "database.index_design",
+      "actual": "database.index_design",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "数据库迁移",
+      "expected": "database.migration_seed_plan",
+      "actual": "database.migration_seed_plan",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "写一份OpenAPI接口文档",
+      "expected": "api.openapi_spec_generator",
+      "actual": "api.openapi_spec_generator",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "新增文件上传接口",
+      "expected": "backend.file_upload_storage",
+      "actual": "backend.file_upload_storage",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "实现用户注册登录",
+      "expected": "backend.auth_login_register",
+      "actual": "backend.auth_login_register",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "实现用户权限管理",
+      "expected": "backend.rbac_role_menu",
+      "actual": "backend.rbac_role_menu",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "实现支付退款接口",
+      "expected": "backend.order_payment_flow",
+      "actual": "backend.order_payment_flow",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "实现库存扣减",
+      "expected": "backend.complex_business_logic",
+      "actual": "backend.complex_business_logic",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "页面按钮的颜色改成蓝色",
+      "expected": "frontend.static_page_build",
+      "actual": "frontend.static_page_build",
+      "expected_mode": "light",
+      "actual_mode": "light",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "修复跨域鉴权错误",
+      "expected": "integration_debugging.cors_auth_debug",
+      "actual": "integration_debugging.cors_auth_debug",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "线上Bug紧急修复",
+      "expected": "iteration.hotfix_workflow",
+      "actual": "iteration.hotfix_workflow",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "编写测试计划",
+      "expected": "testing.test_plan",
+      "actual": "testing.test_plan",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "我要做回归测试",
+      "expected": "testing.regression_test_suite",
+      "actual": "testing.regression_test_suite",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "做一次安全审计",
+      "expected": "security.full_security_audit",
+      "actual": "security.full_security_audit",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "用Docker部署",
+      "expected": "deployment_ops.docker_deploy",
+      "actual": "deployment_ops.docker_deploy",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "生产监控方案",
+      "expected": "deployment_ops.production_monitoring",
+      "actual": "deployment_ops.production_monitoring",
+      "expected_mode": "strict",
+      "actual_mode": "strict",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "生成环境变量样例",
+      "expected": "project_startup_docs.env_example_generator",
+      "actual": "project_startup_docs.env_example_generator",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "项目结构规范",
+      "expected": "architecture.repo_structure_standard",
+      "actual": "architecture.repo_structure_standard",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "分析代码质量问题",
+      "expected": "code_quality.code_review",
+      "actual": "code_quality.code_review",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "实现列表筛选分页",
+      "expected": "frontend.list_search_pagination",
+      "actual": "frontend.list_search_pagination",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "新建一个小程序配置文件",
+      "expected": "frontend.miniprogram_config_generator",
+      "actual": "frontend.miniprogram_config_generator",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "规划下一版本",
+      "expected": "iteration.version_planning",
+      "actual": "iteration.version_planning",
+      "expected_mode": "standard",
+      "actual_mode": "standard",
+      "skill_ok": true,
+      "mode_ok": true
+    },
+    {
+      "task": "解释支付系统是什么",
+      "expected": "backend.order_payment_flow",
+      "actual": "backend.order_payment_flow",
+      "expected_mode": "light",
+      "actual_mode": "light",
+      "skill_ok": true,
+      "mode_ok": true
+    }
+  ]
+}

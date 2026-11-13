@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "actually_executed": true,
+  "events": [
+    "concurrent_write_rejected",
+    "lock_recovered_after_process_death",
+    "symlink_gate_rejected"
+  ],
+  "passed": true,
+  "scope": "temporary local Git fixture; cooperative toolkit writers only"
+}

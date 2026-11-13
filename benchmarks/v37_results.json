@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "fixture_sha256": "89a5e62a01096812eaa44500e146cb9e8399f98038656967d6dd4589209c3e95",
+  "projects": [
+    "inventory-service",
+    "js-dashboard",
+    "notes-workspace",
+    "ts-workspace"
+  ],
+  "symbols": {
+    "cases": 6,
+    "hit": 6,
+    "details": [
+      {
+        "id": "py-order",
+        "project": "inventory-service",
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "id": "py-note",
+        "project": "notes-workspace",
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "id": "ts-checkout",
+        "project": "ts-workspace",
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "id": "ts-invoice",
+        "project": "ts-workspace",
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "id": "js-summarize",
+        "project": "js-dashboard",
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "id": "js-total",
+        "project": "js-dashboard",
+        "hit": true,
+        "rank": 1
+      }
+    ]
+  },
+  "test_selection": {
+    "cases": 5,
+    "hit": 5,
+    "details": [
+      {
+        "id": "py-pricing",
+        "project": "inventory-service",
+        "hit": true,
+        "full_suite_required": false
+      },
+      {
+        "id": "py-search",
+        "project": "notes-workspace",
+        "hit": true,
+        "full_suite_required": false
+      },
+      {
+        "id": "ts-price",
+        "project": "ts-workspace",
+        "hit": true,
+        "full_suite_required": false
+      },
+      {
+        "id": "js-metrics",
+        "project": "js-dashboard",
+        "hit": true,
+        "full_suite_required": false
+      },
+      {
+        "id": "unknown",
+        "project": "js-dashboard",
+        "hit": true,
+        "full_suite_required": true
+      }
+    ]
+  },
+  "note": "Visible four-project synthetic/teaching fixtures, no hidden real-world repos, no external LLM. Test selection is not completeness proof."
+}

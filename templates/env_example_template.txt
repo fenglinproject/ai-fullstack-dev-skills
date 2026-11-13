@@ -1,0 +1,20 @@
+# 应用配置
+APP_NAME=your_app_name
+APP_ENV=development
+APP_PORT=3000
+APP_URL=http://localhost:3000
+
+# 数据库配置
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database
+DB_USERNAME=root
+DB_PASSWORD=your_password
+
+# JWT 配置
+JWT_SECRET=please_change_this_to_a_random_string
+JWT_EXPIRES_IN=7d
+
+# 文件上传配置
+UPLOAD_DIR=uploads
+UPLOAD_MAX_SIZE=10485760

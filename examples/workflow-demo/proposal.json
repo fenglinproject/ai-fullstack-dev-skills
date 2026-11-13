@@ -1,0 +1,14 @@
+{
+  "schema_version": 3,
+  "task_id": "DEMO-1",
+  "summary": "Fix greeting punctuation in example code",
+  "changes": [
+    {
+      "action": "replace",
+      "path": "src/formatter.py",
+      "expected_sha256": "02d8867eb0200394b8f2563f0629100124bbfbf45088382f8929e32266035cca",
+      "old_text": "return f\"Hello {name}\"",
+      "new_text": "return f\"Hello {name}!\""
+    }
+  ]
+}
